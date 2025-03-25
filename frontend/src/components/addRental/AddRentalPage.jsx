@@ -10,7 +10,7 @@ function AddRentalPage() {
     if (_id) {
       const fetchRentalData = async () => {
         try {
-          const response = await fetch(`${process.env.REACT_APP_API_URL}/${_id}`);
+          const response = await fetch(`api/rentals/${_id}`);
           const data = await response.json();
           console.log("Fetched Data:", data); // Check what is being fetched
 

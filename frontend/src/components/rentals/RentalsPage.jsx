@@ -15,7 +15,7 @@ function RentalsPage() {
   };
 
   const onDelete = async (_id) => {
-    const url = `${process.env.REACT_APP_API_URL}/delete/${_id}`;
+    const url = `api/rentals/delete/${_id}`;
     console.log('Deleting rental at URL:', url);
     try {
       // Make a DELETE request to the API
@@ -37,12 +37,11 @@ function RentalsPage() {
   };
 
   useEffect(() => {
-    console.log('API URL:', process.env.REACT_APP_API_URL); // This line will log the API URL
 
     // Fetch the rental data from an API or local data source
     const fetchRentals = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/list`);
+        const response = await fetch(`api/list`);
         const data = await response.json();
         setRentals(data);
       } catch (error) {

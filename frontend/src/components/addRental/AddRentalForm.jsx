@@ -86,8 +86,8 @@ function AddRentalForm({ rental:initialRentalData, onSave }) {
     e.preventDefault();
     console.log("Submitting rental:", rental);
     const url = initialRentalData
-      ? `${process.env.REACT_APP_API_URL}/update/${initialRentalData._id}`
-      : `${process.env.REACT_APP_API_URL}/create`;
+      ? `api/rentals/update/${initialRentalData._id}`
+      : `api/rentals/create`;
     const method = initialRentalData ? 'PUT' : 'POST';
 
     try {
