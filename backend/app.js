@@ -16,26 +16,17 @@ app.get('/', (req, res) => {
   
 // 5000 is taken by mac 
 
-
-// connet to mongoDB
-(async () => {
-    try {
-        await dbConnection.connectToServer();
-        console.log('Connected to MongoDB');
-    } catch (error) {
-        console.error('Error connecting to MongoDB:', error);
-    }
-    })();
-
-
 //routes 
 app.use('/api', rentalRoutes);
 
 const PORT = process.env.PORT || 5001;
 
-//start the server 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
-export default app;
+dbConnection.connectToServer().then(() => {
+    console.log("✅ MongoDB connected");
+  
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
+  }).catch((err) => {
+    console.error("❌ MongoDB connection error:", err);
+  });
