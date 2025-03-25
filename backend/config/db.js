@@ -6,6 +6,8 @@ let client;
 const connectToServer = async () => {
     try {
         const uri = process.env.MONGODB_URI;
+        console.log("🔍 MONGODB_URI value at runtime:", process.env.MONGODB_URI);
+
         if (!uri) {
             throw new Error("❗MONGODB_URI is not defined. Please check your environment variables.");
         }
