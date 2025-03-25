@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://rental-management-backend.vercel.app/api/$1"
+    }
+  ]
+}
