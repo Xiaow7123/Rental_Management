@@ -96,7 +96,10 @@ const deleteRental = async (req, res) => {
 //count total rentals 
 const getTotalRentals = async (req, res) => {
     const dbConnect = dbConnection.getDb();
+    console.log("📦 dbConnect:", dbConnect);
+
     try {
+        console.log("🔍 Getting total rentals from DB...");
         const totalRentals = await dbConnect.collection("rentals").countDocuments();
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json({ totalRentals });
