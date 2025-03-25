@@ -6,7 +6,6 @@ import express from 'express';
 import cors from 'cors';
 import dbConnection from './config/db.js';
 import rentalRoutes from './routes/rentals.js';
-import { validatePathMiddleware } from './middleware/middleware.js';
 
 
 
@@ -18,7 +17,7 @@ app.use(express.json());
 
 //enable cors
 app.use(cors({
-    origin: 'http://localhost:3000', // Allow all domains or specify
+    origin: 'https://rental-management-wiv3.vercel.app/', // Allow all domains or specify
     methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
 }));
 // connet to mongoDB
@@ -31,7 +30,7 @@ app.use(cors({
     }
     })();
 
-app.use('/total', validatePathMiddleware);
+
 //routes 
 app.use('/api', rentalRoutes);
 
