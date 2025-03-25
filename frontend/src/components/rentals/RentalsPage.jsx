@@ -41,7 +41,7 @@ function RentalsPage() {
     // Fetch the rental data from an API or local data source
     const fetchRentals = async () => {
       try {
-        const response = await fetch(`api/list`);
+        const response = await fetch(`api/rentals/list`);
         const data = await response.json();
         setRentals(data);
       } catch (error) {
