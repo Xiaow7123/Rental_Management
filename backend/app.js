@@ -12,7 +12,7 @@ const app = express();
 
 //enable cors
 app.use(cors({
-    origin: 'https://rental-management-wiv3.vercel.app/', // Allow all domains or specify
+    origin: '*', // Allow all domains or specify
     methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
 }));
 
