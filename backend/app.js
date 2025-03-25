@@ -1,11 +1,14 @@
 // server.js
 
 import dotenv from 'dotenv';
-dotenv.config();
 import express from 'express';
 import cors from 'cors';
 import dbConnection from './config/db.js';
 import rentalRoutes from './routes/rentals.js';
+
+dotenv.config();
+const app = express();
+
 
 //enable cors
 app.use(cors({
@@ -14,7 +17,7 @@ app.use(cors({
 }));
 
 
-const app = express();
+app.use(express.json());
 
 
 app.get('/', (req, res) => {
@@ -22,9 +25,6 @@ app.get('/', (req, res) => {
   });
   
 // 5000 is taken by mac 
-const PORT = process.env.PORT || 5001;
-//parse json request 
-app.use(express.json());
 
 
 // connet to mongoDB
@@ -40,6 +40,8 @@ app.use(express.json());
 
 //routes 
 app.use('/api', rentalRoutes);
+
+const PORT = process.env.PORT || 5001;
 
 //start the server 
 app.listen(PORT, () => {
