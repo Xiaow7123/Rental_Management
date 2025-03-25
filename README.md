@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# 🏠 Rental Management Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack rental management system built with **React (Vite)** frontend and **Express + MongoDB** backend, deployed via **Vercel**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🌐 Live Demo
 
-### `npm start`
+Frontend: [https://rental-management-wiv3.vercel.app/](https://rental-management-wiv3.vercel.app/)  
+Backend API: [https://rental-management-backend.vercel.app/](https://rental-management-backend.vercel.app/)
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧩 Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ✅ Frontend (React + Vite)
+- Browse rental listings
+- Create / edit / delete rental entries
+- Pagination & filtering UI
+- Live update of total rental count
+- Communicates with backend via API
 
-### `npm test`
+### ✅ Backend (Express + MongoDB)
+- RESTful API: CRUD endpoints for rentals
+- CORS-enabled for frontend integration
+- Connects to MongoDB Atlas (Cloud)
+- Vercel-friendly setup (serverless style)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔧 Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js
+- MongoDB Atlas account
+- Vercel CLI (`npm i -g vercel`)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🚀 Backend Setup (`/backend`)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Install dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+cd backend
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Environment variable
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You **do not need a `.env` file if using Vercel**.  
+Instead, go to [Vercel Dashboard](https://vercel.com/dashboard) → your project → `Settings` → `Environment Variables`, and add:
 
-## Learn More
+```
+Name: MONGODB_URI
+Value: mongodb+srv://<username>:<password>@cluster.mongodb.net/test?retryWrites=true&w=majority
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Deploy backend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+vercel --prod
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 💻 Frontend Setup (`/frontend`)
 
-### Analyzing the Bundle Size
+### 1. Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+cd frontend
+npm install
+```
 
-### Making a Progressive Web App
+### 2. Create `.env` file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```env
+VITE_API_BASE_URL=https://your-backend.vercel.app/api
+```
 
-### Advanced Configuration
+### 3. Run locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm run dev
+```
 
-### Deployment
+### 4. Deploy to Vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+vercel --prod
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📡 API Endpoints
+
+| Method | Endpoint                   | Description              |
+|--------|----------------------------|--------------------------|
+| GET    | `/api/rentals`             | List all rentals         |
+| GET    | `/api/rentals/:id`         | Get rental by ID         |
+| POST   | `/api/rentals`             | Create new rental        |
+| PUT    | `/api/rentals/:id`         | Update rental            |
+| DELETE | `/api/rentals/:id`         | Delete rental            |
+| GET    | `/api/rentals/total`       | Get total rental count   |
+| GET    | `/api/test-env`            | (Debug) Check env value  |
+
+---
+
+## ✨ Credits
+
+- React + Vite for frontend
+- Express + MongoDB for backend
+- Vercel for free full-stack deployment 💜
+
+---
+
+## 📄 License
+
+MIT License – Free to use and modify.
