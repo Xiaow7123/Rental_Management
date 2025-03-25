@@ -1,25 +1,23 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "app.js", // This should point to your main server file.
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/app.js"
-      }
-    ],
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
+    }
+  ],
+  "env": {
+    "MONGODB_URI": "@mongodb_uri"
+  },
+  "build": {
     "env": {
-      "DATABASE_URL": "mongodb+srv://suzyqi7123:Project03Pass@ecommercewebsite.vxlk2.mongodb.net/?retryWrites=true&w=majority&appName=EcommerceWebsite"
-
-    },
-    "build": {
-      "env": {
-        "NODE_ENV": "production"
-      }
+      "NODE_ENV": "production"
     }
   }
-  
+}
