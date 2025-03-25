@@ -1,0 +1,6 @@
+.app {
+    margin-left: 250px; /* Same as the sidebar width */
+    padding: 20px; /* Optional: Adds padding inside the content area */
+    min-height: 100vh; /* Optional: Ensures the content area is at least as tall as the viewport */
+    background-color: #f4f4f4; /* Optional: Just to make the content area visually distinct */
+}
