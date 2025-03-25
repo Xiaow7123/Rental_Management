@@ -7,7 +7,7 @@ const connectToServer = async () => {
     try {
         const uri = process.env.MONGODB_URI;
         if (!uri) {
-            throw new Error("MongoDB URI is missing.");
+            throw new Error("❗MONGODB_URI is not defined. Please check your environment variables.");
         }
         client = await MongoClient.connect(uri);
         dbConnection = client.db();
