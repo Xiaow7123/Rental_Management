@@ -9,7 +9,14 @@ import rentalRoutes from './routes/rentals.js';
 
 
 
+
 const app = express();
+
+
+app.get('/', (req, res) => {
+    res.send('Hello from my backend application!');
+  });
+  
 // 5000 is taken by mac 
 const PORT = process.env.PORT || 5001;
 //parse json request 
