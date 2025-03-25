@@ -21,14 +21,11 @@ app.use('/api', rentalRoutes);
 
 const PORT = process.env.PORT || 5001;
 
-dbConnection.connectToServer().then(() => {
-    console.log("✅ MongoDB connected");
-  
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on port ${PORT}`);
-    });
-  }).catch((err) => {
-    console.error("❌ MongoDB connection error:", err);
+// Vercel will call the exported app — no need to call listen()
+await dbConnection.connectToServer()
+  .then(() => console.log('✅ MongoDB connected'))
+  .catch((err) => {
+    console.error('❌ MongoDB connection error:', err);
   });
 
-  export default app;
+export default app;
