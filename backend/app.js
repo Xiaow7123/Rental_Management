@@ -7,7 +7,11 @@ import cors from 'cors';
 import dbConnection from './config/db.js';
 import rentalRoutes from './routes/rentals.js';
 
-
+//enable cors
+app.use(cors({
+    origin: 'https://rental-management-wiv3.vercel.app/', // Allow all domains or specify
+    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
+}));
 
 
 const app = express();
@@ -22,11 +26,7 @@ const PORT = process.env.PORT || 5001;
 //parse json request 
 app.use(express.json());
 
-//enable cors
-app.use(cors({
-    origin: 'https://rental-management-wiv3.vercel.app/', // Allow all domains or specify
-    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
-}));
+
 // connet to mongoDB
 (async () => {
     try {
