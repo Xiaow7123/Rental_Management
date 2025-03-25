@@ -10,11 +10,9 @@ dotenv.config();
 const app = express();
 
 
-//enable cors
 app.use(cors({
-    origin: '*', // Allow all domains or specify
-    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
-}));
+    origin: 'https://rental-management-wiv3.vercel.app'  // 指定允许的源
+  }));
 
 
 app.use(express.json());
