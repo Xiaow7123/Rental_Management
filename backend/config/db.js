@@ -1,12 +1,15 @@
 import { MongoClient } from 'mongodb';
 
 let dbConnection;
+let client;
 
 const connectToServer = async () => {
     try {
         const uri = process.env.MONGODB_URI;
-        const client = await MongoClient.connect(uri);
-
+        if (!uri) {
+            throw new Error("MongoDB URI is missing.");
+        }
+        client = await MongoClient.connect(uri);
         dbConnection = client.db();
         console.log("Successfully connected to MongoDB.");
         return dbConnection;
