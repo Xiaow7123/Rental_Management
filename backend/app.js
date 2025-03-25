@@ -1,19 +1,11 @@
-// server.js
 
 import dotenv from 'dotenv';
 import express from 'express';
-import cors from 'cors';
 import dbConnection from './config/db.js';
 import rentalRoutes from './routes/rentals.js';
 
 dotenv.config();
 const app = express();
-
-
-app.use(cors({
-    origin: 'https://rental-management-wiv3.vercel.app'  // 指定允许的源
-  }));
-
 
 app.use(express.json());
 
