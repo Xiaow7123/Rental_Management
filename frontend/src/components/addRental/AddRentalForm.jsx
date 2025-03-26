@@ -36,24 +36,6 @@ function AddRentalForm({ rental:initialRentalData, onSave }) {
           ...initialRentalData.contactInfo
         }
       });
-    } else {
-      setRental({
-        name: '',
-        city: '',
-        state: '',
-        country: '',
-        PropertyType: '',
-        contactInfo: {
-          email: '',
-          phone: ''
-        },
-        concerns: [],
-        highlights: [],
-        price: 0,
-        squareFeet: 0,
-        Amenities: [],
-        officialWebsite: '',
-      });
     }
   }, [initialRentalData]);
 
@@ -83,6 +65,7 @@ function AddRentalForm({ rental:initialRentalData, onSave }) {
   };
 
   const handleSubmit = async(e) => {
+    // prevent default form submission
     e.preventDefault();
     console.log("Submitting rental:", rental);
     const url = initialRentalData

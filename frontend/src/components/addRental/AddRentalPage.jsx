@@ -3,9 +3,13 @@ import AddRentalForm from './AddRentalForm';
 import { useParams } from 'react-router-dom';
 
 function AddRentalPage() {
+  // Get the _id from the URL
   const {_id} = useParams();
+  // Check the _id
+  console.log("ID:", _id); 
   const [rentalData, setRentalData] = React.useState(null);
 
+  // Fetch rental data if an _id is provided
   useEffect(() => {
     if (_id) {
       const fetchRentalData = async () => {
@@ -22,7 +26,7 @@ function AddRentalPage() {
       fetchRentalData();
     }
   }, [_id]);
-
+  console.log("Rental Data:", rentalData); // Check the rental data
   return (
     <div className="add-rental-page">
       <h1>Add New Rental</h1>
@@ -30,5 +34,6 @@ function AddRentalPage() {
     </div>
   );
 }
+
 
 export default AddRentalPage;
