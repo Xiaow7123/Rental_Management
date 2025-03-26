@@ -14,6 +14,8 @@ function AddRentalPage() {
     if (_id) {
       const fetchRentalData = async () => {
         try {
+          console.log(`Fetching data from: api/rentals/${_id}`);
+
           const response = await fetch(`api/rentals/${_id}`);
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -29,6 +31,7 @@ function AddRentalPage() {
       fetchRentalData();
     }
   }, [_id]);
+  
   console.log("Rental Data:", rentalData); // Check the rental data
   return (
     <div className="add-rental-page">
