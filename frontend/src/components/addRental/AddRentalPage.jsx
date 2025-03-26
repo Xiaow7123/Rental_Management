@@ -17,6 +17,7 @@ function AddRentalPage() {
           const response = await fetch(`api/rentals/${_id}`);
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
+          }
           const data = await response.json();
           console.log("Fetched Data:", data); // Check what is being fetched
 
