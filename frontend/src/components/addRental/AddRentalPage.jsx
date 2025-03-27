@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import AddRentalForm from './AddRentalForm';
+import AddRentalForm from '../addRental/AddRentalForm';
 import { useParams } from 'react-router-dom';
 
 function AddRentalPage() {

@@ -8,6 +8,8 @@ function RentalsPage() {
   const [rentals, setRentals] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [rentalsPerPage] = useState(10); 
+  const [filterCity, setFilterCity] = useState('');
+  const [filteredRentals, setFilteredRentals] = useState([]);
   const navigate = useNavigate();
 
   const onEdit =(_id) => {
@@ -53,20 +55,28 @@ function RentalsPage() {
     fetchRentals();
   }, []);
 
+  useEffect(() => {
+    const filtered = filterCity
+      ? rentals.filter(rental => rental.city === filterCity)
+      : rentals;
+    setFilteredRentals(filtered);
+    setCurrentPage(1);
+  }, [rentals,filterCity]);
+
   // Calculate indices for pagination
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-  const indexOfLastRental = currentPage * rentalsPerPage;
-  const indexOfFirstRental = indexOfLastRental - rentalsPerPage;
+  const currentRentals = filteredRentals.slice(
+    (currentPage - 1) * rentalsPerPage,
+    currentPage * rentalsPerPage
+  );
 
-  // Get current rentals
-  const currentRentals = rentals.slice(indexOfFirstRental, indexOfLastRental);
-
+  const uniqueCities = [...new Set(rentals.map(rental => rental.city))];
 
   return (
     <div className="rentals-page">
-      <FilterBar />
+      <FilterBar cities = {uniqueCities} onFilterChange={setFilterCity}/>
       <RentalsList rentals={currentRentals} onEdit={onEdit} onDelete={onDelete} />
       <Pagination 
         rentalsPerPage={rentalsPerPage} 

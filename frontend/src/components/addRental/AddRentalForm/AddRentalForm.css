@@ -1,0 +1,59 @@
+/* Overall form styling */
+.form-container {
+    max-width: 600px; /* Adjusts the width of the form */
+    margin: 40px auto; /* Centers the form on the page with margin */
+    padding: 20px; /* Adds padding inside the form */
+    background-color: #f8f8f8; /* Light grey background */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Styles for each label and input pair */
+  .form-container label {
+    display: block; /* Makes label a block element */
+    margin-bottom: 8px; /* Space below each label */
+    font-weight: bold; /* Makes text bold */
+  }
+  
+  .form-container input[type="text"],
+  .form-container select,
+  .form-container input[type="email"],
+  .form-container input[type="number"] {
+    width: 100%; /* Makes inputs take up 100% of form-container width */
+    padding: 8px; /* Padding inside the inputs */
+    margin-bottom: 20px; /* Space below each input */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Slightly rounded corners on inputs */
+  }
+  
+  /* Styling for the dropdown/select box */
+  .form-container select {
+    height: 40px; /* Sets a fixed height for select elements */
+    background-color: white; /* White background color */
+  }
+  
+  /* Styling the submit button */
+  .form-container input[type="submit"] {
+    width: auto; /* Auto width based on text length and padding */
+    padding: 10px 20px; /* Larger padding for a better click area */
+    background-color: #007BFF; /* Bootstrap primary button color */
+    color: white; /* White text color */
+    font-weight: bold; /* Bold text for the button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for the button */
+  .form-container input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Ensure that elements are not too close to the form boundaries */
+  .form-container input,
+  .form-container select {
+    box-sizing: border-box; /* Includes padding and border in the width */
+  }
+  

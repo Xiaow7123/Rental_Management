@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import FormField from '../common/FormField';
-import FormDropdown from '../common/FormDropdown';
-import FormButton from '../common/FormButton';
+import FormField from '../../common/FormField';
+import FormDropdown from '../../common/FormDropdown';
+import FormButton from '../../common/FormButton';
 import PropTypes from 'prop-types';
+import './AddRentalForm.css';
 
 function AddRentalForm({ rental:initialRentalData, onSave }) {
   const [rental, setRental] = useState({
@@ -69,8 +70,8 @@ function AddRentalForm({ rental:initialRentalData, onSave }) {
     e.preventDefault();
     console.log("Submitting rental:", rental);
     const url = initialRentalData
-      ? `api/rentals/update/${initialRentalData._id}`
-      : `api/rentals/create`;
+      ? `/api/rentals/update/${initialRentalData._id}`
+      : `/api/rentals/create`;
     const method = initialRentalData ? 'PUT' : 'POST';
 
     try {
