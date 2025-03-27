@@ -64,6 +64,7 @@ const updateRental = async (req, res) => {
     const dbConnect = dbConnection.getDb();
     const rentalId = req.params.id;
     const updatedRental = req.body;
+    delete updatedRental._id;
     try {
         const result = await dbConnect.collection("rentals").updateOne({ _id: new ObjectId(rentalId) }, { $set: updatedRental });
         if (result.modifiedCount === 0) {
