@@ -8,7 +8,7 @@ function RentalSummary() {
   useEffect(() => {
     async function fetchRentalData() {
       try {
-        const response = await fetch(`api/rentals/total`);
+        const response = await fetch(`/api/rentals/total`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         } 
