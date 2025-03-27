@@ -10,7 +10,7 @@ export default defineConfig({
         target: 'https://rental-management-backend.vercel.app',
         changeOrigin: true,
         secure: true, // 因为是 https 请求
-        rewrite: path => path.replace(/^\/api/, '/api')
+        rewrite: path => path.replace(/^\/api/, '')
       }
     }
   }
