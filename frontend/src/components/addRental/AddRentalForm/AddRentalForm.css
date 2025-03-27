@@ -1,59 +1,94 @@
 /* Overall form styling */
 .form-container {
-    max-width: 600px; /* Adjusts the width of the form */
-    margin: 40px auto; /* Centers the form on the page with margin */
-    padding: 20px; /* Adds padding inside the form */
-    background-color: #f8f8f8; /* Light grey background */
-    border: 1px solid #ddd; /* Light grey border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-  }
-  
-  /* Styles for each label and input pair */
-  .form-container label {
-    display: block; /* Makes label a block element */
-    margin-bottom: 8px; /* Space below each label */
-    font-weight: bold; /* Makes text bold */
-  }
-  
-  .form-container input[type="text"],
-  .form-container select,
-  .form-container input[type="email"],
-  .form-container input[type="number"] {
-    width: 100%; /* Makes inputs take up 100% of form-container width */
-    padding: 8px; /* Padding inside the inputs */
-    margin-bottom: 20px; /* Space below each input */
-    border: 1px solid #ccc; /* Light grey border */
-    border-radius: 4px; /* Slightly rounded corners on inputs */
-  }
-  
-  /* Styling for the dropdown/select box */
-  .form-container select {
-    height: 40px; /* Sets a fixed height for select elements */
-    background-color: white; /* White background color */
-  }
-  
-  /* Styling the submit button */
-  .form-container input[type="submit"] {
-    width: auto; /* Auto width based on text length and padding */
-    padding: 10px 20px; /* Larger padding for a better click area */
-    background-color: #007BFF; /* Bootstrap primary button color */
-    color: white; /* White text color */
-    font-weight: bold; /* Bold text for the button */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-  }
-  
-  /* Hover effect for the button */
-  .form-container input[type="submit"]:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
-  /* Ensure that elements are not too close to the form boundaries */
-  .form-container input,
-  .form-container select {
-    box-sizing: border-box; /* Includes padding and border in the width */
-  }
-  
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #1e1e2f; /* Dark background for a tech look */
+  border: 1px solid #2a2a3c; /* Subtle border */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  color: #ffffff; /* White text for contrast */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+/* Styles for each label and input pair */
+.form-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #cfcfd6; /* Softer white for labels */
+  font-size: 14px;
+}
+
+.form-container input[type="text"],
+.form-container select,
+.form-container input[type="email"],
+.form-container input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #3a3a4f; /* Darker border for inputs */
+  border-radius: 4px;
+  background-color: #2a2a3c; /* Dark input background */
+  color: #ffffff; /* White text */
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth focus effect */
+}
+
+.form-container input[type="text"]:focus,
+.form-container select:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="number"]:focus {
+  border-color: #007BFF; /* Highlight border on focus */
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Subtle glow effect */
+  outline: none; /* Remove default outline */
+}
+
+/* Styling for the dropdown/select box */
+.form-container select {
+  height: 40px;
+  background-color: #2a2a3c;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Styling the submit button */
+.form-container input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth hover and click effects */
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.form-container input[type="submit"]:active {
+  transform: translateY(0); /* Reset on click */
+}
+
+/* Ensure that elements are not too close to the form boundaries */
+.form-container input,
+.form-container select {
+  box-sizing: border-box;
+}
+
+/* Add spacing between form sections */
+.form-container .form-section {
+  margin-bottom: 24px;
+}
+
+/* Add a subtle divider between sections */
+.form-container .form-divider {
+  height: 1px;
+  background-color: #3a3a4f;
+  margin: 20px 0;
+}
