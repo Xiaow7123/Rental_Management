@@ -1,94 +1,62 @@
-/* Overall form styling */
-.form-container {
+/* General form styling */
+.add-rental-form {
   max-width: 600px;
-  margin: 40px auto;
-  padding: 24px;
-  background-color: #1e1e2f; /* Dark background for a tech look */
-  border: 1px solid #2a2a3c; /* Subtle border */
+  margin: 2rem auto;
+  padding: 20px;
+  background: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
-  color: #ffffff; /* White text for contrast */
-  font-family: 'Roboto', sans-serif; /* Modern font */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Styles for each label and input pair */
-.form-container label {
+/* Label styling */
+.add-rental-form label {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 5px;
   display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: #cfcfd6; /* Softer white for labels */
-  font-size: 14px;
 }
 
-.form-container input[type="text"],
-.form-container select,
-.form-container input[type="email"],
-.form-container input[type="number"] {
+/* Input and select field styling */
+.add-rental-form input[type="text"],
+.add-rental-form input[type="email"],
+.add-rental-form input[type="number"],
+.add-rental-form select {
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #3a3a4f; /* Darker border for inputs */
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: #2a2a3c; /* Dark input background */
-  color: #ffffff; /* White text */
-  font-size: 14px;
-  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth focus effect */
+  box-sizing: border-box; /* Includes padding and border in the width */
+  transition: border-color 0.3s;
 }
 
-.form-container input[type="text"]:focus,
-.form-container select:focus,
-.form-container input[type="email"]:focus,
-.form-container input[type="number"]:focus {
-  border-color: #007BFF; /* Highlight border on focus */
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Subtle glow effect */
-  outline: none; /* Remove default outline */
+.add-rental-form input[type="text"]:focus,
+.add-rental-form input[type="email"]:focus,
+.add-rental-form input[type="number"]:focus,
+.add-rental-form select:focus {
+  border-color: #007bff; /* Blue border for focus */
+  outline: none;
 }
 
-/* Styling for the dropdown/select box */
-.form-container select {
-  height: 40px;
-  background-color: #2a2a3c;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-/* Styling the submit button */
-.form-container input[type="submit"] {
-  width: 100%;
-  padding: 12px;
-  background-color: #007BFF;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 16px;
+/* Button styling */
+.form-button, .add-rental-form input[type="submit"] {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s; /* Smooth hover and click effects */
+  transition: background-color 0.3s;
 }
 
-.form-container input[type="submit"]:hover {
+.form-button:hover, .add-rental-form input[type="submit"]:hover {
   background-color: #0056b3;
-  transform: translateY(-2px); /* Slight lift on hover */
 }
 
-.form-container input[type="submit"]:active {
-  transform: translateY(0); /* Reset on click */
-}
-
-/* Ensure that elements are not too close to the form boundaries */
-.form-container input,
-.form-container select {
-  box-sizing: border-box;
-}
-
-/* Add spacing between form sections */
-.form-container .form-section {
-  margin-bottom: 24px;
-}
-
-/* Add a subtle divider between sections */
-.form-container .form-divider {
-  height: 1px;
-  background-color: #3a3a4f;
-  margin: 20px 0;
+/* Responsive design */
+@media (max-width: 768px) {
+  .add-rental-form {
+    padding: 15px;
+  }
 }
