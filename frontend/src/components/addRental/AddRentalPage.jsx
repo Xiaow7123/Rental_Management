@@ -16,7 +16,7 @@ function AddRentalPage() {
         try {
           console.log(`Fetching data from: api/rentals/${_id}`);
 
-          const response = await fetch(`api/rentals/${_id}`);
+          const response = await fetch(`https://rental-management-wiv3.vercel.app/api/rentals/${_id}`);
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
