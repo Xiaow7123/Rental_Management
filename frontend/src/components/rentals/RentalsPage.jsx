@@ -8,10 +8,10 @@ function RentalsPage() {
   const [rentals, setRentals] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [rentalsPerPage] = useState(10); 
-  const navigateTo = useNavigate();
+  const navigate = useNavigate();
 
   const onEdit =(_id) => {
-    navigateTo(`/edit-rental/${_id}`);
+    navigate(`/add-rental/${_id}`);
   };
 
   const onDelete = async (_id) => {
