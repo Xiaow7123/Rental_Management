@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RentalItem from './RentalItem/RentalItem';
+import RentalItem from '../RentalItem/RentalItem';
+import styles from './RentalsList.module.scss';
 
 function RentalsList({ rentals,onEdit,onDelete }) {
   return (
-    <ul className="rentals-list">
+    <ul className={styles.rentalsList}>
       {rentals.map(rental => (
         <RentalItem key={rental._id} rental={rental} onEdit={onEdit} onDelete={onDelete}/>
       ))}
