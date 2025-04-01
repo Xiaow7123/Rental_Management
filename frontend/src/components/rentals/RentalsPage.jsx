@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import RentalsList from './RentalsList';
+import RentalsList from './RentalsList/RentalsList';
 import { useNavigate } from 'react-router-dom';
 import FilterBar from './FilterBar';
 import Pagination from './Pagination';
