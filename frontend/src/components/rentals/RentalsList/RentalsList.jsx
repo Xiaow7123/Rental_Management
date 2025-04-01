@@ -4,12 +4,29 @@ import RentalItem from '../RentalItem/RentalItem';
 import styles from './RentalsList.module.css';
 
 function RentalsList({ rentals,onEdit,onDelete }) {
+  if (!rentals.length) {
+    return <p className={styles.empty}>No rentals found</p>;
+  }
+
   return (
-    <ul className={styles.rentalsList}>
-      {rentals.map(rental => (
-        <RentalItem key={rental._id} rental={rental} onEdit={onEdit} onDelete={onDelete}/>
-      ))}
-    </ul>
+    <table className={styles.table}>
+      <thead>
+        <tr className={styles.tr}>  
+          <th className={styles.th}>Name</th>
+          <th className={styles.th}>Address</th>
+          <th className={styles.th}>Price</th>
+          <th className={styles.th}>Square Feet</th>
+          <th className={styles.th}>Amentities</th>
+          <th className={styles.th}>Edit</th>
+          <th className={styles.th}>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rentals.map(rental => (
+          <RentalItem key={rental._id} rental={rental} onEdit={onEdit} onDelete={onDelete}/>
+        ))}
+      </tbody>
+    </table>
   );
 }
 RentalsList.propTypes = {
