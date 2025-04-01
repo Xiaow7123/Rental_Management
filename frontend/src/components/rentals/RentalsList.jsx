@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RentalItem from './RentalItem';
+import RentalItem from './RentalItem/RentalItem';
 
 function RentalsList({ rentals,onEdit,onDelete }) {
   return (

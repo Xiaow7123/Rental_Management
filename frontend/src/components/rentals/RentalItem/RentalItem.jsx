@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './RentalItem.css';
 
 function RentalItem({ rental, onEdit,onDelete }) {
   const price = parseFloat(rental.price);  // Convert price to a float
