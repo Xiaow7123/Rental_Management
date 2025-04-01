@@ -17,8 +17,7 @@ function RentalsList({ rentals,onEdit,onDelete }) {
           <th className={styles.th}>Price</th>
           <th className={styles.th}>Square Feet</th>
           <th className={styles.th}>Amentities</th>
-          <th className={styles.th}>Edit</th>
-          <th className={styles.th}>Delete</th>
+          <th className={styles.th}>Action</th>
         </tr>
       </thead>
       <tbody>

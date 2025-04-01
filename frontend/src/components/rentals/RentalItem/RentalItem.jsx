@@ -12,9 +12,9 @@ return (
   <tr className={styles.rentalItem}>
       <td>{rental.name}</td>
       <td>{rental.city}, {rental.country}</td>
-      <td>Price: {formattedPrice}</td>
-      <td>Square Feet: {rental.squareFeet}</td>
-      <td>Amenities: {amenities}</td>
+      <td>{formattedPrice}</td>
+      <td>{rental.squareFeet}</td>
+      <td>{amenities}</td>
       <td>
         <button onClick={() => onEdit(rental._id)}>Edit</button>
         <button onClick={() => onDelete(rental._id)}>Delete</button>
