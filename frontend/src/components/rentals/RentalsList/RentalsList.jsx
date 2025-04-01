@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RentalItem from '../RentalItem/RentalItem';
-import styles from './RentalsList.module.scss';
+import styles from './RentalsList.module.css';
 
 function RentalsList({ rentals,onEdit,onDelete }) {
   return (
