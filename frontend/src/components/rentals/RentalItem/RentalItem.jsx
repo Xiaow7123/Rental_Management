@@ -9,17 +9,17 @@ function RentalItem({ rental, onEdit,onDelete }) {
 
 
 return (
-  <li className={styles.rentalItem}>
-    <div>
-      <h3>{rental.name}</h3>
-      <p>{rental.city}, {rental.country}</p>
-      <p>Price: {formattedPrice}</p>
-      <p>Square Feet: {rental.squareFeet}</p>
-      <p>Amenities: {amenities}</p>
-      <button onClick={() => onEdit(rental._id)}>Edit</button>
-      <button onClick={() => onDelete(rental._id)}>Delete</button>
-    </div>
-  </li>
+  <tr className={styles.rentalItem}>
+      <td>{rental.name}</td>
+      <td>{rental.city}, {rental.country}</td>
+      <td>Price: {formattedPrice}</td>
+      <td>Square Feet: {rental.squareFeet}</td>
+      <td>Amenities: {amenities}</td>
+      <td>
+        <button onClick={() => onEdit(rental._id)}>Edit</button>
+        <button onClick={() => onDelete(rental._id)}>Delete</button>
+      </td>
+  </tr>
 );
 
 }
