@@ -5,8 +5,8 @@ function About() {
         <div className ="about-page">
             <h1>About this project </h1>
             <p>
-                This application is designed to help users manage and track their rental properties efficiently.
-                With our tool, you can add, edit, and delete property listings, view details about each property, and much more.
+                This rental management application is designed to help users organize, evaluate, and compare rental properties with ease.
+  Whether you're planning to move, manage multiple listings, or just want a better overview of your options, this tool provides a clear and interactive way to handle it all.
             </p>
             <h2>Features</h2>
             <ul>
