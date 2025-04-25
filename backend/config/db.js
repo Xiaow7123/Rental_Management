@@ -15,7 +15,7 @@ const connectToServer = async () => {
         dbConnection = client.db();
         console.log("Successfully connected to MongoDB.");
         return dbConnection;
-    } catch (err) {
+    } catch (error) {
         console.error("MongoDB connection error:", err);
         throw err;
     }
@@ -34,4 +34,4 @@ const closeConnection = async () => {
         console.log("MongoDB connection closed.");
     }
 }
-export default { connectToServer, getDb, closeConnection };
+export { connectToServer, getDb, closeConnection };

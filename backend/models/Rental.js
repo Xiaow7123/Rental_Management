@@ -1,7 +1,7 @@
 // Schema and model definition for Rental entity
-
+import {getDb} from "../config/db.js";
 const createRentalCollection = async () => {
-    const dbConnect = mongoUtil.getDb();
+    const dbConnect = getDb();
     try{
         await dbConnect.createRentalCollection("rentals", {
             validator: {
@@ -82,4 +82,4 @@ const createRentalCollection = async () => {
     }
 }
 
-createRentalCollection();
+export default createRentalCollection();
