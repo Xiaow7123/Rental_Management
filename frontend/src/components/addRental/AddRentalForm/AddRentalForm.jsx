@@ -82,11 +82,12 @@ function AddRentalForm({ rental:initialRentalData, onSave }) {
           Amenities: typeof rental.Amenities === 'string' ? rental.Amenities.split(',').map(item => item.trim()) : rental.Amenities,
          }
          console.log("Sending data:", bodyData);
-
+         const token = localStorage.getItem('token');
          const response = await fetch(url, {
             method: method,
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(bodyData),
         });
@@ -130,7 +131,24 @@ function AddRentalForm({ rental:initialRentalData, onSave }) {
       <FormField label="Highlights" type="text" name="highlights" placeholder="Comma-separated values" value={rental.highlights} onChange={(e) => handleArrayChange(e, 'highlights')} />
       <FormField label="Price Per Night (USD)" type="number" name="price" value={rental.price} onChange={handleChange} />
       <FormField label="Square Feet" type="number" name="squareFeet" value={rental.squareFeet} onChange={handleChange} />
-      <FormField label="Amenities" type="text" name="amenities" placeholder="Comma-separated values" value={rental.Amenities} onChange={(e) => handleArrayChange(e, 'Amenities')} />
+      <FormDropdown
+        name="Amenities"
+        value={rental.Amenities}
+        onChange={(e) => handleArrayChange(e, 'Amenities')}
+        options={[
+          { value: '', label: 'Select Amenities' },
+          { value: 'wifi', label: 'WiFi' },
+          { value: 'pool', label: 'Pool' },
+          { value: 'parking', label: 'Parking' },
+          { value: 'gym', label: 'Gym' },
+          { value: 'air_conditioning', label: 'Air Conditioning' },
+          { value: 'In-unit_laundry', label: 'In-unit Laundry' },
+          { value: 'pet_friendly', label: 'Pet Friendly' },
+          { value: 'wooden_flooring', label: 'Wooden Flooring' },
+          { value: 'heating', label: 'Heating' },
+        ]}
+        multiple
+      />
       <FormField label="Official Website" type="text" name="officialWebsite" value={rental.officialWebsite} onChange={handleChange} />
       <FormButton type="submit" onClick={handleSubmit} className="primary">
         Add new rental

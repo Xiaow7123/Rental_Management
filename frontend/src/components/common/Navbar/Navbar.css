@@ -1,0 +1,62 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* <-- separates nav & button */
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    background-color: #FFDB58;
+    position: fixed;
+    max-width: 100vw;
+    height: 60px;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  /* Group nav links */
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Nav link style */
+  .navbar a {
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+  }
+  
+  .navbar a:hover,
+  .navbar a.active {
+    background-color: white;
+    color: black;
+    padding:8px 12px;
+    border-radius:6px;
+    transform: translateY(-4px);
+  }
+  
+  /* Logout button style */
+  .logout-button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;           /* ✅ removes black outline */
+    border-radius: 6px;     /* ✅ more square shape */
+    cursor: pointer;
+    transition: background 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .logout-button:hover {
+    background-color: #e63946;
+  }
+  

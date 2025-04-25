@@ -1,12 +1,59 @@
 .rentalItem {
-  background: #fff;
-  border: 1px solid #eee;
-  padding: 16px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.rentalItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
 .title {
   font-size: 20px;
+  font-weight: bold;
   color: #333;
+  margin-bottom: 12px;
+}
+
+.detailRow {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.highlight {
+  font-weight: 600;
+  color: #222;
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 8px 14px;
+  background-color: #ff6b6b; /* red button */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #e63946;
+}
+
+.selected {
+  background-color: #a4161a;
 }
